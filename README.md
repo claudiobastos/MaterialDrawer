@@ -71,7 +71,7 @@ Great. Your drawer is now ready to use.
 ```java
 //if you want to update the items at a later time it is recommended to keep it in a variable
 PrimaryDrawerItem item1 = new PrimaryDrawerItem().withIdentifier(1).withName(R.string.drawer_item_home);
-SecondaryDrawerItem item2 = new SecondaryDrawerItem().withIdentifier(2).withName(R.string.drawer_item_settings);
+SecondaryDrawerItem item2 = (SecondaryDrawerItem) new SecondaryDrawerItem().withIdentifier(2).withName(R.string.drawer_item_settings);
 
 //create the drawer and remember the `Drawer` result object
 Drawer result = new DrawerBuilder()
@@ -87,6 +87,7 @@ Drawer result = new DrawerBuilder()
         @Override
         public boolean onItemClick(View view, int position, IDrawerItem drawerItem) {
     	    // do something with the clicked item :D
+    	    return true;
         }
     })
     .build();
